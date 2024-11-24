@@ -63,7 +63,7 @@ export class QuizPage extends Page {
         }
         const groups = app.session.user.groups();
         if (
-            app.forum.attribute("xypp-register-quiz.authorized")
+            (!this.inQuiz && app.forum.attribute("xypp-register-quiz.authorized"))
             ||
             (groups && groups.find(g => g && g.id() == app.forum.attribute<string>("xypp-register-quiz.group_id")))
         ) {

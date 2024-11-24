@@ -277,7 +277,7 @@ var QuizPage = /*#__PURE__*/function (_Page) {
       return m("h1", null, _trans("login_first"));
     }
     var groups = flarum_forum_app__WEBPACK_IMPORTED_MODULE_3___default().session.user.groups();
-    if (flarum_forum_app__WEBPACK_IMPORTED_MODULE_3___default().forum.attribute("xypp-register-quiz.authorized") || groups && groups.find(function (g) {
+    if (!this.inQuiz && flarum_forum_app__WEBPACK_IMPORTED_MODULE_3___default().forum.attribute("xypp-register-quiz.authorized") || groups && groups.find(function (g) {
       return g && g.id() == flarum_forum_app__WEBPACK_IMPORTED_MODULE_3___default().forum.attribute("xypp-register-quiz.group_id");
     })) {
       return m("h1", null, _trans("already_authorized"));
