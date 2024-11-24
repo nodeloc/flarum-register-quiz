@@ -428,16 +428,19 @@ var QuizPage = /*#__PURE__*/function (_Page) {
             });
           case 5:
             this.checkedDoorkey = true;
-          case 6:
-            _context.prev = 6;
+            flarum_forum_app__WEBPACK_IMPORTED_MODULE_3___default().forum.pushAttributes({
+              "xypp-register-quiz.authorized": true
+            });
+          case 7:
+            _context.prev = 7;
             this.loading = false;
             m.redraw();
-            return _context.finish(6);
-          case 10:
+            return _context.finish(7);
+          case 11:
           case "end":
             return _context.stop();
         }
-      }, _callee, this, [[2,, 6, 10]]);
+      }, _callee, this, [[2,, 7, 11]]);
     }));
     function submitDoorkey() {
       return _submitDoorkey.apply(this, arguments);

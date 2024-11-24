@@ -185,6 +185,9 @@ export class QuizPage extends Page {
                 body: { doorkey: this.doorkey() },
             });
             this.checkedDoorkey = true;
+            app.forum.pushAttributes({
+                "xypp-register-quiz.authorized": true
+            });
         } finally {
             this.loading = false;
             m.redraw();
