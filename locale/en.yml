@@ -1,0 +1,38 @@
+xypp-register-quiz:
+  # For more details on the format
+  # Checkout https://docs.flarum.org/extend/i18n/#appendix-a-standard-key-format
+  admin:
+    settings:
+      test_time: "Test Duration"
+      problem_count: "Number of Problems"
+      require: "Require Count"
+      group: "Group"
+      problem:
+        title: "Problems"
+        add: "Add Problem"
+        name: "Name"
+    quiz:
+      save: "Save"
+      title: "Title"
+      content: "Content"
+      options: "Options"
+  forum:
+    quiz:
+      desc: "Quiz with {count} questions, {time} minutes limit. Acquire {require} correct answers to pass."
+      title: "Register Quiz"
+      start: "Start Register Quiz"
+      invite: "Use Invite Code"
+      invite_code: "Invite Code"
+      submit: "Submit"
+      login_first: "Please Login First"
+      already_authorized: "You've Already Authorized"
+      submitted: "Submitted"
+      score: "<span>{score}</span>/{total}"
+      in_quiz: "In Quiz"
+      expired_at: "Expire at {time}"
+      authorized: "Quiz passed. Refresh to enjoy the forum."
+      not_pass: "You failed to pass the quiz({score}/{require}). <retry>Try Again</retry>"
+      invite_code_checked: "Invite code checked. Refresh to enjoy the forum."
+    quiz-tip:
+      in-quiz: "You are in quiz now. Go Finishing the quiz before expire."
+      required: "You are required to pass a quiz before continue."
