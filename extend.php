@@ -11,6 +11,7 @@
 
 namespace Xypp\RegisterQuiz;
 
+use BlackTom\PaymentCustomize\Console\ApplyCurrent;
 use Flarum\Api\Serializer\CurrentUserSerializer;
 use Flarum\Extend;
 use Flarum\Group\Group;
@@ -52,4 +53,7 @@ return [
         ->serializeToForum('xypp-register-quiz.require', 'xypp-register-quiz.require')
         ->serializeToForum('xypp-register-quiz.group_id', 'xypp-register-quiz.group_id')
         ->serializeToForum('xypp-register-quiz.problem_count', 'xypp-register-quiz.problem_count'),
+
+    (new Extend\Console)
+        ->command(ApplyCurrent::class)
 ];
