@@ -11,11 +11,11 @@
 
 namespace Xypp\RegisterQuiz;
 
-use BlackTom\PaymentCustomize\Console\ApplyCurrent;
 use Flarum\Api\Serializer\CurrentUserSerializer;
 use Flarum\Extend;
 use Flarum\Group\Group;
 use Xypp\RegisterQuiz\Api\Controller\SubmitDoorkeyController;
+use Xypp\RegisterQuiz\Console\ApplyCurrent;
 use Xypp\RegisterQuiz\Content\QuizAttributes;
 
 return [

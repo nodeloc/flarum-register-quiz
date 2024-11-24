@@ -1,8 +1,7 @@
 <?php
 
-namespace BlackTom\PaymentCustomize\Console;
+namespace Xypp\RegisterQuiz\Console;
 
-use BlackTom\PaymentCustomize\PayMethod\Wechat\WechatCertificateManager;
 use Flarum\Group\Group;
 use Flarum\Settings\SettingsRepositoryInterface;
 use Flarum\User\Event\GroupsChanged;
