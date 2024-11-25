@@ -14,9 +14,11 @@ namespace Xypp\RegisterQuiz;
 use Flarum\Api\Serializer\CurrentUserSerializer;
 use Flarum\Extend;
 use Flarum\Group\Group;
+use Flarum\User\Event\Registered;
 use Xypp\RegisterQuiz\Api\Controller\SubmitDoorkeyController;
 use Xypp\RegisterQuiz\Console\ApplyCurrent;
 use Xypp\RegisterQuiz\Content\QuizAttributes;
+use Xypp\RegisterQuiz\Listener\PostRegisterListener;
 
 return [
     (new Extend\Frontend('forum'))
@@ -55,5 +57,8 @@ return [
         ->serializeToForum('xypp-register-quiz.problem_count', 'xypp-register-quiz.problem_count'),
 
     (new Extend\Console)
-        ->command(ApplyCurrent::class)
+        ->command(ApplyCurrent::class),
+
+    (new Extend\Event)
+        ->listen(Registered::class, PostRegisterListener::class)
 ];

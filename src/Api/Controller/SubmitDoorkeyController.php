@@ -64,6 +64,9 @@ class SubmitDoorkeyController implements RequestHandlerInterface
             $actor->groups()->attach($group->id);
             $this->events->dispatch(new GroupsChanged($actor, $oldGroups));
         }
+        
+        $actor->invite_code = $doorkeyContent;
+        $actor->save();
 
         $doorkey->increment('uses');
         return new JsonResponse(['success' => 1]);
