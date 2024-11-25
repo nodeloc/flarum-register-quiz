@@ -34,5 +34,5 @@ xypp-register-quiz:
       not_pass: "你未能通过答题({score}/{require}). <retry>重试</retry>"
       invite_code_checked: "邀请码验证成功，刷新即可使用论坛"
     quiz-tip:
-      in-quiz: "你现在正在进行答题，继续前往答题"
+      in_quiz: "你现在正在进行答题，继续前往答题"
       required: "你需要完成答题才能继续使用论坛功能"

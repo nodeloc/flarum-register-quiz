@@ -25,6 +25,7 @@ class QuizAttributes
             ->exists();
 
         $attributes['in_quiz'] = $type;
+        $attributes['register_quiz_require'] = !$actor->groups()->where('id', $this->settings->get('xypp-register-quiz.group_id') ?? 0)->exists();
         return $attributes;
     }
 }

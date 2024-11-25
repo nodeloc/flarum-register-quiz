@@ -8,8 +8,7 @@ export function addTip() {
         let tip = null;
         if ((app.current?.data as any)?.routeName != 'xypp-register-quiz.quiz' && !app.forum.attribute("xypp-register-quiz.authorized"))
             if (app.session?.user) {
-                const groups = app.session.user.groups();
-                if (groups && !groups.find(g => g && g.id() == app.forum.attribute<string>("xypp-register-quiz.group_id"))) {
+                if (app.session.user.attribute("register_quiz_require")) {
                     tip = app.translator.trans('xypp-register-quiz.forum.quiz-tip.required');
                 }
                 if (app.session.user.attribute<boolean>("in_quiz")) {

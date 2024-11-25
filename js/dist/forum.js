@@ -146,10 +146,7 @@ function addTip() {
     var existing = original();
     var tip = null;
     if (((_app$current = (flarum_forum_app__WEBPACK_IMPORTED_MODULE_2___default().current)) == null || (_app$current = _app$current.data) == null ? void 0 : _app$current.routeName) != 'xypp-register-quiz.quiz' && !flarum_forum_app__WEBPACK_IMPORTED_MODULE_2___default().forum.attribute("xypp-register-quiz.authorized")) if ((_app$session = (flarum_forum_app__WEBPACK_IMPORTED_MODULE_2___default().session)) != null && _app$session.user) {
-      var groups = flarum_forum_app__WEBPACK_IMPORTED_MODULE_2___default().session.user.groups();
-      if (groups && !groups.find(function (g) {
-        return g && g.id() == flarum_forum_app__WEBPACK_IMPORTED_MODULE_2___default().forum.attribute("xypp-register-quiz.group_id");
-      })) {
+      if (flarum_forum_app__WEBPACK_IMPORTED_MODULE_2___default().session.user.attribute("register_quiz_require")) {
         tip = flarum_forum_app__WEBPACK_IMPORTED_MODULE_2___default().translator.trans('xypp-register-quiz.forum.quiz-tip.required');
       }
       if (flarum_forum_app__WEBPACK_IMPORTED_MODULE_2___default().session.user.attribute("in_quiz")) {
@@ -276,10 +273,7 @@ var QuizPage = /*#__PURE__*/function (_Page) {
     if (!((_app$session2 = (flarum_forum_app__WEBPACK_IMPORTED_MODULE_3___default().session)) != null && _app$session2.user)) {
       return m("h1", null, _trans("login_first"));
     }
-    var groups = flarum_forum_app__WEBPACK_IMPORTED_MODULE_3___default().session.user.groups();
-    if (!this.inQuiz && flarum_forum_app__WEBPACK_IMPORTED_MODULE_3___default().forum.attribute("xypp-register-quiz.authorized") || groups && groups.find(function (g) {
-      return g && g.id() == flarum_forum_app__WEBPACK_IMPORTED_MODULE_3___default().forum.attribute("xypp-register-quiz.group_id");
-    })) {
+    if (!this.inQuiz && !flarum_forum_app__WEBPACK_IMPORTED_MODULE_3___default().session.user.attribute("register_quiz_require")) {
       return m("h1", null, _trans("already_authorized"));
     }
     if (this.checkedDoorkey) {

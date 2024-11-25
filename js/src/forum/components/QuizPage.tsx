@@ -61,12 +61,7 @@ export class QuizPage extends Page {
         if (!app.session?.user) {
             return <h1>{_trans("login_first")}</h1>
         }
-        const groups = app.session.user.groups();
-        if (
-            (!this.inQuiz && app.forum.attribute("xypp-register-quiz.authorized"))
-            ||
-            (groups && groups.find(g => g && g.id() == app.forum.attribute<string>("xypp-register-quiz.group_id")))
-        ) {
+        if (!this.inQuiz && !app.session.user.attribute("register_quiz_require")) {
             return <h1>{_trans("already_authorized")}</h1>
         }
         if (this.checkedDoorkey) {

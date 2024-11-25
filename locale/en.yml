@@ -34,5 +34,5 @@ xypp-register-quiz:
       not_pass: "You failed to pass the quiz({score}/{require}). <retry>Try Again</retry>"
       invite_code_checked: "Invite code checked. Refresh to enjoy the forum."
     quiz-tip:
-      in-quiz: "You are in quiz now. Go Finishing the quiz before expire."
+      in_quiz: "You are in quiz now. Go Finishing the quiz before expire."
       required: "You are required to pass a quiz before continue."
