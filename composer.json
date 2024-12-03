@@ -29,7 +29,10 @@
                 "name": "fas fa-chalkboard-teacher",
                 "color": "#fff",
                 "backgroundColor": "#5e35b1"
-            }
+            },
+            "optional-dependencies": [
+                "fof/doorman"
+            ]
         },
         "flarum-cli": {
             "modules": {
