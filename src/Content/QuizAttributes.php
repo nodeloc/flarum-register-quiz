@@ -25,8 +25,16 @@ class QuizAttributes
             ->exists();
 
         $attributes['in_quiz'] = $type;
-        if (!$actor->isGuest())
-            $attributes['register_quiz_require'] = !$actor->groups()->where('id', $this->settings->get('xypp-register-quiz.group_id') ?? 0)->exists();
+        if (!$actor->isGuest() ){
+            $suspendDurationWithin7Days = false;
+            // 检查用户是否被 suspend 并计算是否在 7 天及以内
+            if ($actor->suspended_until) {
+                $suspendEnd = Carbon::parse($actor->suspended_until);
+                $suspendDurationWithin7Days = $suspendEnd->isFuture() && $suspendEnd->diffInDays(Carbon::now()) <= 7;
+            }
+            // 如果 suspend 时间在 7 天及以内，将属性设为 true
+            $attributes['register_quiz_require'] = $suspendDurationWithin7Days;
+        }
         return $attributes;
     }
 }
